@@ -6,6 +6,7 @@ import { useQuasar } from 'quasar'
 
 const $q = useQuasar()
 
+const leftDrawerOpen = ref(false)
 const horaDoDia = ref(12)
 
 const escuro =  computed(() => horaDoDia.value < 6 || horaDoDia.value >= 19)
@@ -21,7 +22,7 @@ watch(escuro, (escuro) => {
 
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="mdi-menu" @click="toggleLeftDrawer" />
+        <q-btn dense flat round icon="mdi-menu" @click="leftDrawerOpen = !leftDrawerOpen" />
 
         <q-toolbar-title>
           <q-avatar>
